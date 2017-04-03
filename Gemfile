@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 #bootstrap
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
+#devise
+gem 'devise', '~> 4.2', '>= 4.2.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
