@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :verifications
+  resources :places
+  resources :equipment
   devise_for :admins
   devise_for :users
   root 'home#index'
