@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lab name:</strong>
+  <%= @laboratory.lab_name %>
+</p>
+
+<p>
+  <strong>Accreditation:</strong>
+  <%= @laboratory.accreditation %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @laboratory.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @laboratory.phone %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @laboratory.contact %>
+</p>
+
+<p>
+  <strong>Lab description:</strong>
+  <%= @laboratory.lab_description %>
+</p>
+
+<%= link_to 'Edit', edit_laboratory_path(@laboratory) %> |
+<%= link_to 'Back', laboratories_path %>

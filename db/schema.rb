@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170412192014) do
+ActiveRecord::Schema.define(version: 20170412205133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,17 @@ ActiveRecord::Schema.define(version: 20170412192014) do
     t.date     "expiration_date"
     t.integer  "laboratory_id"
     t.integer  "verification_id"
+  end
+
+  create_table "laboratories", force: :cascade do |t|
+    t.string   "lab_name"
+    t.string   "accreditation"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "contact"
+    t.string   "lab_description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "places", force: :cascade do |t|
