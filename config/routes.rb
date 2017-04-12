@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :brands
+  resources :producers
+  resources :equipment_types
   resources :verifications
   resources :places
   resources :equipment

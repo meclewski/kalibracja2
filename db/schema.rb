@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403212546) do
+ActiveRecord::Schema.define(version: 20170412192014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(version: 20170403212546) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "brands", force: :cascade do |t|
+    t.string   "e_brand"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "equipment", force: :cascade do |t|
     t.integer  "calibration_number"
     t.string   "inventory_number"
@@ -40,16 +46,36 @@ ActiveRecord::Schema.define(version: 20170403212546) do
     t.string   "verification_result"
     t.integer  "user_id"
     t.integer  "admin_id"
-    t.integer  "brand_id"
     t.integer  "place_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "equipment_type_id"
+    t.date     "production_date"
+  end
+
+  create_table "equipment_types", force: :cascade do |t|
+    t.string   "type_of_equipment"
+    t.integer  "producer_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "e_price"
+    t.string   "ver_price"
+    t.date     "expiration_date"
+    t.integer  "laboratory_id"
+    t.integer  "verification_id"
   end
 
   create_table "places", force: :cascade do |t|
     t.string   "place_of_use"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "producers", force: :cascade do |t|
+    t.string   "producer_name"
+    t.integer  "brand_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|

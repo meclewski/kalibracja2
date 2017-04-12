@@ -1,0 +1,27 @@
+<%= form_for(producer) do |f| %>
+  <% if producer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(producer.errors.count, "error") %> prohibited this producer from being saved:</h2>
+
+      <ul>
+      <% producer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :producer_name %>
+    <%= f.text_field :producer_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :brand_id %>
+    <%= f.number_field :brand_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
