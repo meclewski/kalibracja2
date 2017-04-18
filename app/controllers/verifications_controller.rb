@@ -1,6 +1,6 @@
 class VerificationsController < ApplicationController
   before_action :set_verification, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin!
   # GET /verifications
   # GET /verifications.json
   def index

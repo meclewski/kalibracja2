@@ -1,6 +1,6 @@
 class EquipmentTypesController < ApplicationController
   before_action :set_equipment_type, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin!
   # GET /equipment_types
   # GET /equipment_types.json
   def index

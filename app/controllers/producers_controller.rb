@@ -1,6 +1,6 @@
 class ProducersController < ApplicationController
   before_action :set_producer, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin!
   # GET /producers
   # GET /producers.json
   def index
