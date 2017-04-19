@@ -1,20 +1,21 @@
 
 
-<h1>Equipment</h1>
+<h1>Urządzenia kontrolno-pomiarowe</h1>
 
-<table>
+<div class="table-responsive">
+<table class="table table-bordered ">
   <thead>
     <tr>
-      <th>Calibration number</th>
-      <th>Inventory number</th>
-      <th>Serial number</th>
-      <th>Calibration date</th>
-      <th>Verification result</th>
-      <th>User</th>
-      <th>Admin</th>
-      <th>Brand</th>
-      <th>Place</th>
-      <th colspan="3"></th>
+      <th>Numer kalibracji</th>
+      <th>Numer inwentarzowy</th>
+      <th>Numer seryjny</th>
+      <th>Data kalibracji</th>
+      <th>Wynik weryfikacji</th>
+      <th>Użytkownik</th>
+      <th>Wprowadzający</th>
+      <th>Typ sprzętu</th>
+      <th>Miejsce</th>
+      <th colspan="3">Obsługa</th>
     </tr>
   </thead>
 
@@ -26,10 +27,10 @@
         <td><%= equipment.serial_number %></td>
         <td><%= equipment.calibration_date %></td>
         <td><%= equipment.verification_result %></td>
-        <td><%= equipment.user_id %></td>
-        <td><%= equipment.admin_id %></td>
-        <td><%= equipment.brand_id %></td>
-        <td><%= equipment.place_id %></td>
+        <td><%= equipment.user.email %></td>
+        <td><%= equipment.admin.email %></td>
+        <td><%= equipment.brand.e_brand %></td>
+        <td><%= equipment.place.place_of_use %></td>
         <td><%= link_to 'Show', equipment %></td>
         <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
         <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -37,7 +38,8 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New Equipment', new_equipment_path %>
+<%= link_to 'Nowe urządzenie', new_equipment_path %>

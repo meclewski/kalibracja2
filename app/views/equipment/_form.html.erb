@@ -11,57 +11,141 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :calibration_number %>
-    <%= f.number_field :calibration_number %>
-  </div>
-
-  <div class="field">
-    <%= f.label :inventory_number %>
-    <%= f.text_field :inventory_number %>
-  </div>
-
-  <div class="field">
-    <%= f.label :serial_number %>
-    <%= f.text_field :serial_number %>
-  </div>
-
-  <div class="field">
-    <%= f.label :calibration_date %>
-    <%= f.date_select :calibration_date %>
-  </div>
-
-  <div class="field">
-    <%= f.label :verification_result %>
-    <%= f.text_field :verification_result %>
-  </div>
-
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.number_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :admin_id %>
-    <%= f.number_field :admin_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :equipment_type_id %>
-    <%= f.number_field :equipment_type_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :place_id %>
-    <%= f.number_field :place_id %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :production_date %>
-    <%= f.number_field :production_date %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="container">
+	<div class="row">
+		 <div class="form-group">
+		 	<div class="col-md-2">
+		    	<%= f.label :Numer_kalibracji %>
+		   	</div>
+			<div class="col-md-9">
+		    	<%= f.text_field :calibration_number, :value => 1,class: 'form-control' %>
+		  	</div>
+		</div>
+	</div><br>	
+	<div class="row">
+		 <div class="form-group">
+		 	<div class="col-md-2">
+		    	<%= f.label :Numer_inwentarzowy %>
+		   	</div>
+			<div class="col-md-9">
+		    	<%= f.text_field :inventory_number, :value => 'TPVD00',class: 'form-control' %>
+		  	</div>
+		</div>
+	</div><br>	
+	<div class="row">
+		 <div class="form-group">
+		 	<div class="col-md-2">
+		    	<%= f.label :Numer_seryjny %>
+		   	</div>
+			<div class="col-md-9">
+		    	<%= f.text_field :serial_number, class: 'form-control' %>
+		  	</div>
+		</div>
+	</div><br>			  
+	<div class="row">
+		 <div class="form-group">
+		 	<div class="col-md-2">
+		    	<%= f.label :Wynik_weryfikacji %>
+		   	</div>
+			<div class="col-md-9">
+		    	<%= f.text_field :verification_result, class: 'form-control' %>
+		  	</div>
+		</div>
+	</div><br>	
+	<div class="row">
+		 <div class="form-group">
+		 	<div class="col-md-2">
+		    	<%= f.label :Data_kalibracji %>
+		   	</div>
+			<div class="col-md-9">
+		    	<%= f.date_select :calibration_date, class: 'form-control' %>
+		  	</div>
+		</div>
+	</div><br>			  
+	<div class="row">
+		 <div class="form-group">
+		 	<div class="col-md-2">
+		    	<%= f.label :Data_produkcji %>
+		   	</div>
+			<div class="col-md-9">
+		    	<%= f.date_select :production_date, class: 'form-control' %>
+		  	</div>
+		</div>
+	</div><br>		
+	<div class="row">
+		 <div class="form-group">
+		 	<div class="col-md-2">
+		    	<%= f.label :Wynik_weryfikacji %>
+		   	</div>
+			<div class="col-md-9">
+		    	<%= f.text_field :verification_result, class: 'form-control' %>
+		  	</div>
+		</div>
+	</div><br>		  
+	<div class="row">
+		<div class="form-group">
+		  	<div class="col-sm-2">
+		    	<%= f.label :Użytkownik %>
+		    </div>
+			<div class="col-sm-9">
+		    	<%= collection_select(:equipment, :user_id, User.all, :id, :email) %>
+		    </div>
+		</div>
+	</div><br>		  
+	<div class="row">
+		<div class="form-group">
+		  	<div class="col-sm-2">
+		    	<%= f.label :Administrator %>
+		    </div>
+			<div class="col-sm-9">
+		    	<%= collection_select(:equipment, :admin_id, Admin.all, :id, :email) %>
+		    </div>
+		</div>
+	</div><br>			
+	<div class="row">
+		<div class="form-group">
+		  	<div class="col-sm-2">
+		    	<%= f.label :Użytkownik %>
+		    </div>
+			<div class="col-sm-9">
+		    	<%= collection_select(:equipment, :user_id, User.all, :id, :email) %>
+		    </div>
+		</div>
+	</div><br>		  
+	<div class="row">
+		<div class="form-group">
+		  	<div class="col-sm-2">
+		    	<%= f.label :Typ_sprzętu %>
+		    </div>
+			<div class="col-sm-9">
+		    	
+		    	<%= collection_select(:equipment, :equipment_type_id, EquipmentType.all, :id, :type_of_equipment) %> |
+		    	<%= collection_select(:equipment_types, :producer_id, Producer.all, :id, :producer_name) %>|
+		    	<%= collection_select(:producers, :brand_id, Brand.all, :id, :e_brand) %>|
+		    
+		    </div>
+		</div>
+	</div><br>			  
+	<div class="row">
+		<div class="form-group">
+		  	<div class="col-sm-2">
+		    	<%= f.label :Miejsce_użytkowania %>
+		    </div>
+			<div class="col-sm-9">
+		    	<%= collection_select(:equipment, :place_id, Place.all, :id, :place_of_use) %>
+		    </div>
+		</div>
+	</div><br>			
+			  
+	<div class="actions">
+		<%= f.submit 'Utwórz', class: 'btn btn-primary' %>
+    </div>
+</div> 		
+			  
+			
+			  
+			
+			  
+			  
+			  
 <% end %>
