@@ -1,8 +1,9 @@
 
-
-<h1>Urządzenia kontrolno-pomiarowe</h1>
-
-<div class="table-responsive">
+<div class="panel panel-primary">
+	<div class="panel-heading"><h1 class="panel-title">Urządzenia kontrolno-pomiarowe</h1></div>
+	
+	<div class="panel-body">
+		<div class="table-responsive">
 <table class="table table-bordered ">
   <thead>
     <tr>
@@ -39,7 +40,10 @@
   </tbody>
 </table>
 </div>
+  
 
-<br>
+</div>
+	<br><br><br>
+	<div class="panel-footer"><%= link_to 'Nowe urządzenie', new_equipment_path %></div>
+</div>
 
-<%= link_to 'Nowe urządzenie', new_equipment_path %>

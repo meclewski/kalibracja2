@@ -1,5 +1,11 @@
-<h1>Nowe urządzenie</h1><br>
+<div class="panel panel-primary">
+	<div class="panel-heading"><h1 class="panel-title">Nowe urządzenie</h1></div>
+	
+	<div class="panel-body">
+		<%= render 'form', equipment: @equipment %>
+  
 
-<%= render 'form', equipment: @equipment %>
-
-<%= link_to 'Back', equipment_index_path %>
+</div>
+	<br><br><br>
+	<div class="panel-footer"><%= link_to 'Powrót', equipment_index_path %></div>
+</div>
