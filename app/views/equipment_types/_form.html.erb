@@ -18,9 +18,36 @@
 
   <div class="field">
     <%= f.label :producer_id %>
-    <%= f.number_field :producer_id %>
+    
+     <%= f.number_field :producer_id %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :verification_id %>
+    <%= collection_select(:equipment_types, :verification_id, Verification.all, :id, :type_of_verification) %>
   </div>
 
+   <div class="field">
+    <%= f.label :e_price %>
+    <%= f.text_field :e_price %>
+  </div>
+   
+   <div class="field">
+    <%= f.label :ver_price %>
+    <%= f.text_field :ver_price %>
+  </div>
+
+<div class="field">
+    <%= f.label :expiration_date %>
+    <%= f.date_select :expiration_date %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Laboratorium %>
+    <%= collection_select(:equipment_types, :laboratory_id, Laboratory.all, :id, :lab_name) %>
+  </div>
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>

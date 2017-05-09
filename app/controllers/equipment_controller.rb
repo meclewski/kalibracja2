@@ -69,6 +69,6 @@ class EquipmentController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def equipment_params
-      params.require(:equipment).permit(:calibration_number, :inventory_number, :serial_number, :calibration_date, :verification_result, :user_id, :admin_id, :brand_id, :place_id)
+      params.require(:equipment).permit(:calibration_number, :inventory_number, :serial_number, :calibration_date, :verification_result, :user_id, :admin_id, :brand_id, :place_id, :equipment_type_id, :production_date)
     end
 end
