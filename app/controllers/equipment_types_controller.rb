@@ -24,8 +24,11 @@ class EquipmentTypesController < ApplicationController
   # POST /equipment_types
   # POST /equipment_types.json
   def create
+    @producer = Producer.all
+    @verification = Verification.all
     @equipment_type = EquipmentType.new(equipment_type_params)
 
+    
     respond_to do |format|
       if @equipment_type.save
         format.html { redirect_to @equipment_type, notice: 'Equipment type was successfully created.' }

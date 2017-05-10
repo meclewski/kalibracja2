@@ -69,6 +69,6 @@ class VerificationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def verification_params
-      params.require(:verification).permit(:type_of_verification)
+      params.require(:verification).permit(:type_of_verification, :id)
     end
 end

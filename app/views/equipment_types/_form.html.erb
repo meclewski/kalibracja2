@@ -19,12 +19,13 @@
   <div class="field">
     <%= f.label :producer_id %>
     
-     <%= f.number_field :producer_id %>
+	<%= collection_select(:equipment_type, :producer_id, Producer.all, :id, :producer_name) %>
+    
   </div>
   
   <div class="field">
     <%= f.label :verification_id %>
-    <%= collection_select(:equipment_types, :verification_id, Verification.all, :id, :type_of_verification) %>
+    <%= collection_select(:equipment_type, :verification_id, Verification.all, :id, :type_of_verification) %>
   </div>
 
    <div class="field">
@@ -44,7 +45,7 @@
   
   <div class="field">
     <%= f.label :Laboratorium %>
-    <%= collection_select(:equipment_types, :laboratory_id, Laboratory.all, :id, :lab_name) %>
+    <%= collection_select(:equipment_type, :laboratory_id, Laboratory.all, :id, :lab_name) %>
   </div>
   
   
